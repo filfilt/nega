@@ -1,0 +1,35 @@
+/* All my css goes here  
+ selector {
+   property1: value1;
+ }
+
+ selector can be an html element, #id, .class or combination
+
+*/
+/* element selector  */
+h1{
+   color: #042591; /*font color */
+  text-align: center;
+}
+/* id selector #id */
+#product{
+  border-radius: 6px; 
+}
+/* class selector .className */
+.groupForm{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.groupForm label {
+  width: 50%;
+  background-color: lightblue;
+  display: inline-block;
+}
+
+.groupForm input,.groupForm textarea  {
+  width: 48%;
+  margin: 0;
+}
+
+
