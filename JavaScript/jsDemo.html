@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>JS Demo Class 1/28/2020</h1>
+  </div>
+
+  <script>
+    var a = 'Lula King';
+    var foo = 5;
+    foo = foo + 10;
+    //if else condition 
+    if (foo == 15) {
+      // statements 
+      foo = 20;
+    }
+    if (a == 'Lula') {
+      console.log(a);
+    }
+    else{
+      console.log('It is not Lula');
+    }
+
+    var m = 4;
+    if(m == 1){
+      console.log('It is January');
+    }
+    else if(m == 2){
+      console.log('It is Feb');
+    }
+    else if(m == 3){
+      console.log('It is Mar');
+    }
+    else if(m == 4){
+      console.log('It is Apri');
+    }
+    else if(m == 5){
+      console.log('It is May');
+    }
+    else if(m == 6){
+      console.log('It is June');
+    }
+    else if(m == 7){
+      console.log('It is Jul');
+    }
+    else{
+      console.log('Greater than seven');
+    }
+
+    var m1 = 'Jan', m2='Feb', m3='Mar';
+    //Array 
+    var months = ['JAN', 'FEB', 'MAR','APR','MAY','JUN','JUL','AUG','SEPT'];
+
+    console.log(' 1 is ' + months[0]);
+    console.log(' 2 is ' + months[1]);
+    console.log(' 3 is ' + months[2]);
+    //console.log(n + ' is ' + months[n-1]);
+    n=7
+    console.log(n + ' is ' + months[n-1]);
+
+    for(var index = 1 ;index <= months.length ; index = index + 2){
+      //statement
+      console.log(index + ' is ' + months[index-1]);
+    }
+    //for each i in months (0-length)
+    for(var i in months){
+      console.log(i*1 + 1 + ' is ' + months[i]);
+    }
+
+
+  </script>
+</body>
+
+</html>
