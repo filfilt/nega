@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+<div class="container-fluid">
+  <div id="myItems">
+
+  </div>
+</div>
+
+
+<script>
+  //Function to get list items by passing List name to the list 
+  function getItems(listName) {
+    var url = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('" + listName + "')/items";
+    return $.ajax({
+      url: url,
+      method: "GET",
+      headers: { "Accept": "application/json; odata=verbose" }
+    });
+  }
+  function getLists() {
+    var url = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists?$filter=Hidden eq false";
+    return $.ajax({
+      url: url,
+      method: "GET",
+      headers: { "Accept": "application/json; odata=verbose" }
+    });
+  }
+
+  //jQuery document ready, the code in the block runs after html renders
+  $(document).ready(function () {
+    //Code inplementation goes here
+    getLists().then(function(response){
+      console.log('Data is ', response);
+      var lists = response.d.results;
+      var myHtml = '';
+      for(var index in lists){
+        console.log(lists[index].Title, lists[index].ItemCount);
+        myHtml = myHtml + `
+        <div class="alert alert-info" role="alert">
+          ${lists[index].Title} - ${lists[index].ItemCount} Items
+        </div>
+        `;
+      }
+      $('#myItems').html(myHtml);
+
+
+    },function(error){console.log('oops error ', error);});
+
+  });
+</script>

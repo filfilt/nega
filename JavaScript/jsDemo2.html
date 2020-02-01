@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Some text </h1>
+    <input class="btn btn-primary" id="myButton" type="button" value="Call Function">
+  
+  </div>
+  
+  
+  <script>
+    //JQuery Demo 
+    $(document).ready(function(){
+      //code goes here
+      $('#myButton').click(function(){
+        $('h1').toggle();
+      });
+
+      //code end
+    });
+   
+
+
+    //Function exaples
+  
+    function calculateAge(dob){
+      var d = new Date(dob);
+      var today = new Date();
+      var age = today.getFullYear() - d.getFullYear();
+      console.log('Your age is ', age);
+      return age;      
+    }
+    //Object
+    var st1 = {
+      name: 'Simret',
+      email: 'simret@email.com',
+      dob: '3/3/2000',
+      age: 20,
+      phone: '444-333-2345'
+    };
+
+    //JSON - Java Script Object Notation
+    var jsonSt1 = '{"name":"Simret","email":"simret@email.com","dob":"3/3/2000","age": 20,"phone":"444-333-2345"}';
+
+    //JSON is a JS object with properties in a quote
+    //convert js object to JSON JSON.stringfy(st1);
+    //convert JSON to js object JSON.parse(jsonSt1);
+  </script>
+</body>
+</html>
+
