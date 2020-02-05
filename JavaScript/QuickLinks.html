@@ -10,11 +10,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
+  <style>
+    .card-body.p-3:hover{
+      background-color: #999;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container-fluid pt-4">
     <div id="quickLinks"></div>
   </div>
 
@@ -41,7 +45,7 @@
         var myHtml = '';
         for (var i in results) {
           console.log(results[i].Url); //Title Column
-          myHtml += '<div class="card mb-1"><div class="card-body">' +
+          myHtml += '<div class="card mb-1"><div class="card-body p-3">' +
             '<a href="' + results[i].Url + '">' + results[i].Title + '</a></div></div>';
         }
         //console.log(myHtml);
