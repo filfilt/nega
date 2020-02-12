@@ -1,0 +1,48 @@
+<div id="employeeItems" class="container"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+  function getData(url) {
+      return $.ajax({
+        url: url,
+        method: "GET",
+        headers: { "Accept": "application/json; odata=verbose" }
+      });
+    }
+
+    function getEmployees() {
+      var url = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Employees')/items";
+      return getData(url);
+    }
+    $(document).ready(function () {
+      //Code Starts here
+      getEmployees().then(function(response){
+        //code success starts here
+        console.log(response.d.results)
+        var items = response.d.results;
+        var myHtml = '<div class="row">';
+
+        for(var i in items){
+          var item = items[i];
+          myHtml += `          
+            <div class="col-sm-3">
+              <div class="card">
+                <img class="card-img-top" src="${item.Picture}" alt="${item.Title}'s Picture" style="width:100%">
+                <div class="card-body">
+                  <h4 class="card-title">${item.Title}</h4>
+                  <p class="card-text">${item.ShortDescription}</p>
+                  <a href="${_spPageContextInfo.webAbsoluteUrl + '/lists/Employees/dispform.aspx?id=' + item.ID}" target="_blank" class="btn btn-primary">See Profile</a>
+                </div>
+              </div>
+            </div>      
+          `;
+        }
+        myHtml += '</div>';
+        $('#employeeItems').html(myHtml);
+
+
+        //code success ends here
+      },function(error){console.error('Oops error', error);});
+      // code ends here 
+    });
+</script>
