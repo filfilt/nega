@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<style>
+	h1{
+		text-align: center;
+        width: 100%;
+        color: blue;
+		
+		
+
+	}
+	.groupForm {
+		margin-left: 300px;
+	}
+	.groupForm label {
+		color:red;
+		display: inline-block;
+	}
+
+</style>
+<body>
+	<h1>Our Purchase Form</h1>
+	<div class="groupForm">
+		<label for="Product name"> Product name*</label> &nbsp&nbsp&nbsp
+	<input type="text" id="Product name" name="Product name" required >
+	</div><br>
+
+	<div class="groupForm">
+		<label for="Product name"> Product name</label>&nbsp&nbsp&nbsp
+		<select name="Product type" id="Product type">
+			<option >select one item---</option>
+			<option >stationairy</option>
+			<option >Computer</option>
+			<option >Table</option>
+		</select>
+	</div><br>
+	<div class="groupForm">
+		<label for="Manager"> Manager*</label>&nbsp&nbsp&nbsp
+	<input type="text" name="Manager" id="Manager" required >
+	</div><br>
+	<div class="groupForm">
+		<label for="Product name"> Product name</label>&nbsp&nbsp&nbsp
+	<input type="checkbox" name="Approval" id="Approval" >
+	</div><br>
+	<div class="groupForm">
+		<label for="Approval comment"> Approval Comment</label>&nbsp&nbsp&nbsp
+		<textarea name="Approval comment" id="Approval comment" cols="30" rows="3"></textarea>
+	</div><br>
+	<div class="groupForm">
+	<input type="button" value="cancel">
+	<button>Save</button>
+	</div>
+	
+    
+</body>
+</html>
