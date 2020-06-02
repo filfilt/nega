@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+ <div class="jumbotron text-center">
+  <h1>Try the following calculation</h1>
+  </div> 
+  
+
+
+        <input type="button" class="btn btn-primary" onclick="calculateAge('3/3/2000')" value="Submit">
+    
+     
+  </div>
+</div>
+
+<script>
+         function calculateAge(dob){
+             var d = new Date(dob);
+             var today = new Date();
+           var age = today.getFullYear() - d.getFullYear();
+        alert("your age is "+ age);
+       
+         
+         }
+         var st1 = {
+             name: "nega",
+             dob: '3/3/2011',
+             email: 'xyz@gmail',
+             phone: '222-333-4444'
+         };
+      var jsonSt1 = '{"name":"nega","dob":"3/3/2011","email":"xyz@gmail","phone":"222-333-4444"}';
+</script>
+<!-- jquery excerse  -->
+<!-- $(document).ready(function(){$(#).click(function(){$("").x();});}) -->
+</body>
+</html>
