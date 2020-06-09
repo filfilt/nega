@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="QuikLink"> </div>
+    </div>
+
+    <script>
+        //Function to get list items by passing List name to the list 
+        function getData(url) 
+        {
+            return $.ajax({
+                url: url,
+                method: "GET",
+                headers: { "Accept": "application/json; odata=verbose" }
+                        });
+        }
+
+        function getQuikLink() 
+        {
+            var url = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('QuickLink')/items";
+            return getData(url);
+        }
+
+        $(document).ready(function () 
+    {
+            getQuikLink().then(function (response)
+        {
+            console.log('Data is ', response);
+            var results = response.d.results;
+                
+                for (var i in results) 
+                {
+                console.log(results[i].Title);
+                }
+        }, function (error) { console.log('oops error', error) });
+    });
+    </script>
+</body>
+
+</html>
